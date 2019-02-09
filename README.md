@@ -3,7 +3,9 @@
 A web app that communicates with Github's RESTful API. The main function of this app is to
 list an organisation's Github projects.
 
-## Instalation
+### `yarn install`
+
+Install the package dependencies.<br>
 
 ### `yarn start`
 
@@ -27,5 +29,3 @@ Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
-
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
