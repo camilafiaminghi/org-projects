@@ -45,7 +45,7 @@ describe('<SearchResult />', () => {
 		expect(wrapper.find('ul').find('li')).toHaveLength(props.errors.length)
 	})
 
-	it('should show error', () => {
+	it('should show items', () => {
 		props = {
 			...props,
 			errors: null,

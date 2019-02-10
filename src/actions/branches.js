@@ -19,9 +19,9 @@ export function getBranchesSuccess (branches) {
 	}
 }
 
-export function getBranchesFail (errors) {
+export function getBranchesFail (error) {
 	return {
 		type: BRANCHES_FAIL,
-		errors
+		error
 	}
 }

@@ -31,9 +31,9 @@ describe('repos action', () => {
 	})
 
 	it('getReposFail should return an object', () => {
-		expect(getReposFail({message: 'Not Found', status: 404})).toEqual({
+		expect(getReposFail(reposError)).toEqual({
 			type: REPOS_FAIL,
-			errors: {message: 'Not Found', status: 404}
+			errors: reposError
 		})
 	})
 })

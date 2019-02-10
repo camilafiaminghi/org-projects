@@ -14,10 +14,11 @@ export const getReposByOrg = (org) => {
 	})
 }
 
-export const getBranches = (org, repo) => {
+export const getBranches = (action) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			if (org === 'test' && repo === 'error') {
+
+			if (action.org === 'test' && action.repo === 'error') {
 				reject(branchesError)
 			}
       resolve(branches)

@@ -33,7 +33,7 @@ describe('branches action', () => {
 	it('getBranchesFail should return an object', () => {
 		expect(getBranchesFail({message: 'Not Found', status: 404})).toEqual({
 			type: BRANCHES_FAIL,
-			errors: {message: 'Not Found', status: 404}
+			error: {message: 'Not Found', status: 404}
 		})
 	})
 })

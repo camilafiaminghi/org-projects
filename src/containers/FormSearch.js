@@ -60,7 +60,7 @@ export class FormSearch extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<InputText
 						name="search"
-						placeholder="Search repositories"
+						placeholder="Organization name"
 						maxLength={122}
 						charsLeft={true}
 						message="This field is required"

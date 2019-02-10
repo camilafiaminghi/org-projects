@@ -15,8 +15,8 @@ export const getReposByOrg = (org, sort='starts') => {
 	.catch(error => { throw error })
 }
 
-export const getBranches = (org, repo) => {
-	return axios.get(`${RESTAPI_URL}/repos/${org}/${repo}/branches`, {
+export const getBranches = (action) => {
+	return axios.get(`${RESTAPI_URL}/repos/${action.org}/${action.repo}/branches`, {
 		headers: {
 			'Accept': 'application/json'
 		}

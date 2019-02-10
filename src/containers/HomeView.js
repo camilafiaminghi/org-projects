@@ -7,7 +7,7 @@ class HomeView extends Component {
 		return (
 			<div>
 				<header>
-					<h2>Repositories By Organization</h2>
+					<h2>Search the repositories of an organization</h2>
 				</header>
 				<FormSearch />
 				<SearchResult />

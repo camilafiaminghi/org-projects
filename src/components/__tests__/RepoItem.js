@@ -1,5 +1,5 @@
-import React from 'react';
-import { MemoryRouter } from 'react-router';
+import React from 'react'
+import { MemoryRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 import RepoItem from './../RepoItem'

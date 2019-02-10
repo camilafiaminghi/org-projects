@@ -18,7 +18,7 @@ const branches = (state = {}, action) => {
 		case BRANCHES_FAIL:
 			return {
 				...state,
-				errors: action.errors,
+				error: action.error,
 				loading: false
 			}
 		default:

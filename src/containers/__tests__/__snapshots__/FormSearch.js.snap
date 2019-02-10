@@ -11,7 +11,7 @@ exports[`<FormSearch /> matches snapshot 1`] = `
         maxLength={122}
         name="search"
         onChange={[Function]}
-        placeholder="Search repositories"
+        placeholder="Organization name"
         type="text"
         value=""
       />

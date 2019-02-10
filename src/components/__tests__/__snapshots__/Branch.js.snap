@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Branch /> matches snapshot 1`] = `
+<div>
+  <p>
+    0.3-stable
+  </p>
+  <a
+    href="https://api.github.com/repos/facebook/react/commits/f7c56d77dfbb1f7b8217f04e00ff71a26537c9a8"
+    target="_blank"
+  >
+    f7c56d77dfbb1f7b8217f04e00ff71a26537c9a8
+  </a>
+</div>
+`;
