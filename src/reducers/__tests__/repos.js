@@ -1,6 +1,6 @@
 import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../../actions/repos'
 import repos from './../repos'
-import data from './../../__mocks__/repos'
+import data from './../../__helpers__/repos'
 
 describe('repos reducer', () => {
 	it('should handle initial state', () => {

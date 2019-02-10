@@ -16,9 +16,9 @@ export function getReposSuccess (repos) {
 	}
 }
 
-export function getReposFail (error) {
+export function getReposFail (errors) {
 	return {
 		type: REPOS_FAIL,
-		error
+		errors
 	}
 }

@@ -2,9 +2,6 @@
 
 exports[`<FormSearch /> matches snapshot 1`] = `
 <div>
-  <h2>
-    Repositories By Organization
-  </h2>
   <form
     onSubmit={[Function]}
   >

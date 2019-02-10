@@ -6,7 +6,8 @@ import {
 	getRepos,
 	getReposSuccess,
 	getReposFail } from './../repos'
-import repos from './../../__mocks__/repos'
+import repos from './../../__helpers__/repos'
+import reposError from './../../__helpers__/reposError'
 
 const configStore = configureMockStore()
 const store = configStore({})
@@ -32,7 +33,7 @@ describe('repos action', () => {
 	it('getReposFail should return an object', () => {
 		expect(getReposFail({message: 'Not Found', status: 404})).toEqual({
 			type: REPOS_FAIL,
-			error: {message: 'Not Found', status: 404}
+			errors: {message: 'Not Found', status: 404}
 		})
 	})
 })

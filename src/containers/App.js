@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FormSearch from './FormSearch'
+import SearchResult from './SearchResult'
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
           <h2>Repositories By Organization</h2>
         </header>
         <FormSearch />
+        <SearchResult />
       </div>
     )
   }

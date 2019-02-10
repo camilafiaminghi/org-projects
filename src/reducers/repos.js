@@ -12,12 +12,13 @@ const repos = (state = {}, action) => {
 			return {
 				...state,
 				...action.payload,
+				errors: null,
 				loading: false
 			}
 		case REPOS_FAIL:
 			return {
 				...state,
-				error: action.error,
+				errors: action.errors,
 				loading: false
 			}
 		default:
