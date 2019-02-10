@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import FormSearch from './FormSearch'
-import SearchResult from './SearchResult'
+import { Route, Switch } from 'react-router-dom'
+import HomeView from './HomeView'
+import Branches from './Branches'
+import RouteNotFound from './../components/RouteNotFound'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <h2>Repositories By Organization</h2>
-        </header>
-        <FormSearch />
-        <SearchResult />
+        <Switch>
+					<Route exact path="/" component={HomeView} />
+					<Route path="/not-found" component={RouteNotFound} />
+          <Route path="/branches/:org/:name" component={Branches} />
+          <Route component={RouteNotFound} />
+      	</Switch>
       </div>
     )
   }
