@@ -10,8 +10,7 @@ class InputText extends Component {
 		handleOnChange: PropTypes.func.isRequired,
 		submitted: PropTypes.bool,
 		charsLeft: PropTypes.bool,
-		message: PropTypes.string,
-		value: PropTypes.string
+		message: PropTypes.string
 	}
 
 	state = {
@@ -22,20 +21,17 @@ class InputText extends Component {
 
 	handleValidation = (event) => {
 		const value = event.target.value
+		const { name } = this.props
+		const valid = validationRules(name, value)
 
-		if ( value.length > 0 ) {
-			const { name } = this.props
-			const valid = validationRules(name, value)
+		this.setState((prevState) => ({
+			...prevState,
+			text: value,
+			changed: true,
+			valid
+		}))
 
-			this.setState((prevState) => ({
-				...prevState,
-				text: value,
-				changed: true,
-				valid
-			}))
-
-			this.props.handleOnChange(name, value, valid)
-		}
+		this.props.handleOnChange(name, value, valid)
 	}
 
 	render() {

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormSearch /> matches snapshot 1`] = `
+<div>
+  <h2>
+    Repositories By Organization
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <input
+        autoComplete="off"
+        maxLength={122}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search repositories"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="btn disabled"
+      disabled={true}
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;

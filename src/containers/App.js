@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
+import FormSearch from './FormSearch'
 
 class App extends Component {
   render() {
     return (
       <div>
         <header>
-          <p>
-            App Container
-          </p>
+          <h2>Repositories By Organization</h2>
         </header>
+        <FormSearch />
       </div>
     )
   }
