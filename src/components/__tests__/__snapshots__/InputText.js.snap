@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputText /> matches snapshot 1`] = `
+<div>
+  <input
+    autoComplete="off"
+    maxLength={122}
+    name="search"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
