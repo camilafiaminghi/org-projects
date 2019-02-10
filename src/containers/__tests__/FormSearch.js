@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import { FormSearch } from './../FormSearch'

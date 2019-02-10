@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 import InputText from './../InputText'
 import { validation, isValid } from './../../utils/validation'
 

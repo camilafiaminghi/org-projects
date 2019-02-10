@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import RepoItem from './../components/RepoItem'
 
-export class Results extends Component {
+export class SearchResult extends Component {
 
 	static propTypes = {
 		errors: PropTypes.array,
@@ -31,9 +32,11 @@ export class Results extends Component {
 				{( items ) &&
 					<div>
 						<p>{org}'s repositories:</p>
-						<ul>
-							{items.map((item) => (<li key={item.id}>{item.name}</li>))}
-						</ul>
+						<ol>
+							{items.map((item) => (
+								<li key={item.id}><RepoItem {...item} org={org} /></li>
+							))}
+						</ol>
 					</div>
 				}
 			</div>
@@ -50,4 +53,4 @@ export const mapStateToProps = ({ repos }) => {
 	}
 }
 
-export default connect(mapStateToProps)(Results);
+export default connect(mapStateToProps)(SearchResult);

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepoItem /> matches snapshot 1`] = `
+<div>
+  <a
+    href="#"
+  >
+    react
+  </a>
+  <p>
+    A declarative, efficient, and flexible JavaScript library for building user interfaces.
+  </p>
+  <span>
+    Language: 
+    JavaScript
+  </span>
+   | 
+  <span>
+    Stars: 
+    121943
+  </span>
+</div>
+`;
