@@ -17,7 +17,7 @@ const repos = (state = {}, action) => {
 		case REPOS_FAIL:
 			return {
 				...state,
-				...action.error,
+				error: action.error,
 				loading: false
 			}
 		default:

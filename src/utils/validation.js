@@ -2,7 +2,6 @@ export function validationRules (name, value) {
 	const rule = {
 		search: !!value.trim() && value.length > 3
 	}
-
 	return rule[name]
 }
 
