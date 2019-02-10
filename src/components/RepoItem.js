@@ -1,12 +1,27 @@
 import React from 'react'
-// import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-export default function RepoItem ({ org, name, stargazers_count, description, language }) {
+const RepoItem = ({ org, name, stargazers_count, description, language }) => {
 	return (
 		<div>
-			<a href="#">{name}</a>
+			<Link
+				to={`/branches/${org}/${name}`}
+				aria-label={`Go to ${name} branches`}>
+				{name}
+			</Link>
 			<p>{description}</p>
 			<span>Language: {language}</span> | <span>Stars: {stargazers_count}</span>
 		</div>
 	)
 }
+
+RepoItem.propTypes = {
+  org: PropTypes.string,
+  name: PropTypes.string,
+  stargazers_count: PropTypes.number,
+  description: PropTypes.string,
+  language: PropTypes.string
+}
+
+export default RepoItem

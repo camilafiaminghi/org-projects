@@ -3,7 +3,9 @@
 exports[`<RepoItem /> matches snapshot 1`] = `
 <div>
   <a
-    href="#"
+    aria-label="Go to react branches"
+    href="/branches/facebook/react"
+    onClick={[Function]}
   >
     react
   </a>

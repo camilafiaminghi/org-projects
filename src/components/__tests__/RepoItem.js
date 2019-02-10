@@ -1,9 +1,12 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router';
+import { Link } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 import RepoItem from './../RepoItem'
 import repos from './../../__helpers__/repos'
 
 const repo = repos.items[0]
+let router
 let wrapper
 
 describe('<RepoItem />', () => {
@@ -12,7 +15,8 @@ describe('<RepoItem />', () => {
 			...repo,
 			org: repo.owner.login
 		}
-		wrapper = shallow(<RepoItem {...props} />)
+		router = shallow(<MemoryRouter><RepoItem {...props} /></MemoryRouter>)
+		wrapper = router.find(RepoItem).shallow()
 	})
 
 	it('matches snapshot', () => {
@@ -20,7 +24,7 @@ describe('<RepoItem />', () => {
 			...repo,
 			org: repo.owner.login
 		}
-		const component = renderer.create(<RepoItem {...props} />)
+		const component = renderer.create(<MemoryRouter><RepoItem {...props} /></MemoryRouter>)
 		expect(component.toJSON()).toMatchSnapshot()
 	})
 
@@ -29,7 +33,7 @@ describe('<RepoItem />', () => {
 	})
 
 	it('should has a link', () => {
-		expect(wrapper.find('a').exists()).toBeTruthy()
+		expect(wrapper.find('Link').exists()).toBeTruthy()
 	})
 
 	it('should has a description', () => {

@@ -11,7 +11,7 @@ class App extends Component {
         <Switch>
 					<Route exact path="/" component={HomeView} />
 					<Route path="/not-found" component={RouteNotFound} />
-          <Route path="/branches/:org/:name" component={Branches} />
+          <Route path="/branches/:org/:repo" component={Branches} />
           <Route component={RouteNotFound} />
       	</Switch>
       </div>
