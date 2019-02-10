@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import { getReposByOrg } from './../utils/api'
 import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../actions/repos'
 
