@@ -3,10 +3,10 @@ import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../../actions/repos'
 import { fetchRepos } from './../saga'
 
 describe('saga middleware', () => {
-	const action = {type: REPOS_REQUEST, meta: 'test'}
+	const action = {type: REPOS_REQUEST, payload: 'test'}
 	const generator = fetchRepos(action)
 
-	it('fetchRepos should receive meta', () => {
+	it('fetchRepos should receive payload', () => {
 		expect(generator.next().value.type).toEqual('CALL')
 	})
 

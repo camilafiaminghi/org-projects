@@ -10,6 +10,6 @@ export const getReposByOrg = (org, sort='starts') => {
 			'Accept': 'application/json'
 		}
 	})
-	.then(response => {console.log('response.data'); return response.data;})
-	.catch(err => { throw err })
+	.then(response => response.data)
+	.catch(error => { throw error })
 }

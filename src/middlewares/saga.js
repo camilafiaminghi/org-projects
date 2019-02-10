@@ -4,15 +4,15 @@ import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../actions/repos'
 
 export function* fetchRepos (action) {
 	try {
-		const payload = yield call(getReposByOrg, action.meta)
+		const payload = yield call(getReposByOrg, action.payload)
 		yield put({
 			type: REPOS_SUCCESS,
 			payload
 		})
-	} catch (e) {
+	} catch (error) {
 		yield put({
 			type: REPOS_FAIL,
-			error: e.message
+			error: error.response.data
 		})
 	}
 }

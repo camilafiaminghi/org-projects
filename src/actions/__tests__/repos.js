@@ -18,7 +18,7 @@ describe('repos action', () => {
 	it('getRepos should return an object', () => {
 		expect(getRepos('test')).toEqual({
 			type: REPOS_REQUEST,
-			meta: 'test'
+			payload: 'test'
 		})
 	})
 

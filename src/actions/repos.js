@@ -5,7 +5,7 @@ export const REPOS_FAIL = 'REPOS_FAIL'
 export function getRepos (org) {
 	return {
 		type: REPOS_REQUEST,
-		meta: org
+		payload: org
 	}
 }
 

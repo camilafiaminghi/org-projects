@@ -5,20 +5,20 @@ const repos = (state = {}, action) => {
 		case REPOS_REQUEST:
 			return {
 				...state,
-				loading: true,
-				org: action.meta
+				org: action.payload,
+				loading: true
 			}
 		case REPOS_SUCCESS:
 			return {
 				...state,
-				loading: false,
-				...action.payload
+				...action.payload,
+				loading: false
 			}
 		case REPOS_FAIL:
 			return {
 				...state,
-				loading: false,
-				...action.error
+				...action.error,
+				loading: false
 			}
 		default:
 			return state

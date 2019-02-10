@@ -10,8 +10,8 @@ describe('repos reducer', () => {
 	it('should handle REPOS_REQUEST', () => {
 		expect(repos({}, {
 			type: REPOS_REQUEST,
-			meta: 'test'
-		})).toMatchObject({org:'test', loading: true})
+			payload: 'test'
+		})).toMatchObject({org: 'test', loading: true})
 	})
 
 	it('should handle REPOS_SUCCESS', () => {
