@@ -1,24 +1,43 @@
 import { call, put } from 'redux-saga/effects'
 import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../../actions/repos'
-import { fetchRepos } from './../saga'
+import { BRANCHES_REQUEST, BRANCHES_SUCCESS, BRANCHES_FAIL } from './../../actions/branches'
+import { fetchRepos, fetchBranches } from './../saga'
 
 describe('saga middleware', () => {
-	const action = {type: REPOS_REQUEST, payload: 'test'}
-	const generator = fetchRepos(action)
+	const reposAction = {type: REPOS_REQUEST, payload: 'test'}
+	const reposGen = fetchRepos(reposAction)
+
+	const branchesAction = {type: BRANCHES_REQUEST, payload: 'test'}
+	const branchesGen = fetchRepos(branchesAction)
 
 	it('fetchRepos should receive payload', () => {
-		expect(generator.next().value.type).toEqual('CALL')
+		expect(reposGen.next().value.type).toEqual('CALL')
 	})
 
 	it('fetchRepos should put action success', () => {
-		const value = generator.next().value
+		const value = reposGen.next().value
 
 		expect(value.type).toEqual('PUT')
 		expect(value.payload.action.type).toEqual(REPOS_SUCCESS)
 	})
 
 	it ('fetchRepos should be done', () => {
-		expect(generator.next().done).toEqual(true)
+		expect(reposGen.next().done).toEqual(true)
+	})
+
+	it('fetchBranches should receive payload', () => {
+		expect(branchesGen.next().value.type).toEqual('CALL')
+	})
+
+	it('fetchBranches should put action success', () => {
+		const value = branchesGen.next().value
+
+		expect(value.type).toEqual('PUT')
+		expect(value.payload.action.type).toEqual(REPOS_SUCCESS)
+	})
+
+	it ('fetchBranches should be done', () => {
+		expect(branchesGen.next().done).toEqual(true)
 	})
 })
 
