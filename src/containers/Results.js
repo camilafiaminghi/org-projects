@@ -46,7 +46,7 @@ export class Results extends Component {
 				)}
 				{( items && items.length > 0 ) &&
 					<section className="results">
-						<h3>{org}'s repositories [show: {items.length}/{totalCount}]:</h3>
+						<h3>{org}'s repositories [{items.length}/{totalCount}]</h3>
 						<ol>
 							{items.map((item) => (
 								<li key={item.id}><RepoItem {...item} org={org} /></li>

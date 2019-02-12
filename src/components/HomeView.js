@@ -11,6 +11,7 @@ const HomeView = () => {
 			</header>
 			<FormSearch />
 			<Results />
+			<NextPage />
 		</div>
 	)
 }

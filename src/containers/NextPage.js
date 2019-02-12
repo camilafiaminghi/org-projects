@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getRepos } from './../actions/repos'
+import { getReposByPage } from './../actions/repos'
 
 export class NextPage extends Component {
 
 	static propTypes = {
+		loading: PropTypes.bool,
 		org: PropTypes.string,
 		sort: PropTypes.string,
 		language: PropTypes.string,
@@ -27,9 +28,9 @@ export class NextPage extends Component {
 	}
 
 	render() {
-		const { nextPage } = this.props
+		const { nextPage, totalCount, loading } = this.props
 
-		if (nextPage) {
+		if (totalCount > 0 && !nextPage) {
 			return (
 				<section className="results">
 					<h4>End of results</h4>
@@ -39,18 +40,21 @@ export class NextPage extends Component {
 
 		return (
 			<div className="row">
-				<button
-					onClick={this.handleOnClick}>
-					+ results
-				</button>
+			 {(totalCount > 0 && !loading) && (
+					<button
+						onClick={this.handleOnClick}>
+						+ results
+					</button>
+				)}
 			</div>
 		)
 	}
 }
 
 export const mapStateToProps = ({ repos }) => {
-	const { org, sort, language, page, nextPage, total_count } = repos
+	const { org, sort, language, page, nextPage, total_count, loading } = repos
 	return {
+		loading,
 		org,
 		sort,
 		language,
@@ -62,7 +66,7 @@ export const mapStateToProps = ({ repos }) => {
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    handleRepos: (search) => dispatch(getRepos(search))
+    handleRepos: (search) => dispatch(getReposByPage(search))
   }
 }
 

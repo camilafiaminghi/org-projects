@@ -11,9 +11,9 @@ export const getReposByOrg = ({org, sort, page, language}) => {
 	 */
 	const RESTAPI_URL = 'https://api.github.com'
 	const perPage = 4
-	const languageFilter = (language) ? `+language=${language}` : ''
+	const languageFilter = (language) ? `+language:${language}` : ''
 	const url = `${RESTAPI_URL}/search/repositories?q=org:${org}+sort:${sort}${languageFilter}&per_page=${perPage}&page=${page}`
-	console.log('getReposByOrg', url)
+	// console.log('getReposByOrg', url)
 
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {

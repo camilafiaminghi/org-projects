@@ -34,9 +34,9 @@ class LanguageFilter extends Component {
 				<h3>Filter by language:</h3>
 				<select onChange={this.handleOnChange}>
 					<option value=''>All</option>
-					{languages.map((item) => (
+					{languages.map((item,index) => (
 						<option
-							key={item}
+							key={`${item}-${index}`}
 							value={item}>{item}</option>
 
 					))}

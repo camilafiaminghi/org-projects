@@ -25,5 +25,12 @@ exports[`<RepoItem /> matches snapshot 1`] = `
       122084
     </strong>
   </span>
+   | 
+  <span>
+    Forks: 
+    <strong>
+      22134
+    </strong>
+  </span>
 </div>
 `;

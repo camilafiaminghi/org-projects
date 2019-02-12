@@ -81,7 +81,7 @@ select {
 	text-indent: 8px;
 	display: block;
 	width: 100%;
-	min-height: 43px;
+	min-height: 44px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	background-position: right center;
@@ -92,8 +92,7 @@ input,
 textarea,
 select {
 	background-color: #ffffff;
-	border-radius: 4px;
-	border: 1px solid #dad7d7;
+	border: 1px solid #999999;
 	font-size: 14px;
 	font-weight: 500;
 	color: #666666;
