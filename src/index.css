@@ -124,8 +124,28 @@ button {
 	min-height: 24px;
 }
 
-button.disabled {
+button.disabled,
+button[disabled=disabled] {
 	opacity: .3
+}
+
+section {
+	margin: 0.6em 0;
+}
+
+.results {
+	margin: 1.2em 0;
+}
+
+.results h1,
+.results h2,
+.results h3,
+.results h4,
+.results h5,
+.results h6 {
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .container {
@@ -136,12 +156,7 @@ button.disabled {
 	margin: 80px auto;
 }
 
-/* ROW COL */
 .row {
 	display: flex;
 	flex-direction: row;
-}
-
-.col {
-	flex: 1;
 }

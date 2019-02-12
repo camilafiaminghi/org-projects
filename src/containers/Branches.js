@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -24,15 +24,19 @@ export class Branches extends Component {
 		const { org, repo, error, items, loading } = this.props
 
 		return (
-			<div>
+			<Fragment>
 				<header>
 					<Link to="/">Go to Home</Link>
 				</header>
-				{ ( loading ) && <span>Loading...</span> }
+				{ ( loading ) && (
+					<section className="results">
+						<h1>Loading...</h1>
+					</section>
+				)}
 				{ ( error ) && <span>{ error.message }</span> }
 				{ ( items ) && (
-					<section>
-						<h2>{repo} branches from {org}</h2>
+					<section className="results">
+						<h1>{repo} branches from {org}</h1>
 						<ul>
 							{ items.map((item) => (
 								<li key={item.name}>
@@ -42,7 +46,7 @@ export class Branches extends Component {
 						</ul>
 					</section>
 				)}
-			</div>
+			</Fragment>
 		)
 	}
 }

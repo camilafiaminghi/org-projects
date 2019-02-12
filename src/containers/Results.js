@@ -38,7 +38,11 @@ export class Results extends Component {
 						<LanguageFilter />
 					</Fragment>
 				)}
-				{( loading ) && (<div>Searching...</div>)}
+				{( loading ) && (
+					<section className="results">
+						<h3>Searching...</h3>
+					</section>
+				)}
 				{( items && items.length > 0 ) &&
 					<section className="results">
 						<h3>{org}'s repositories:</h3>

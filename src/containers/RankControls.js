@@ -26,10 +26,11 @@ class RankControls extends Component {
 
 		return (
 			<section>
-				<h3>Sort by rank</h3>
+				<h3>Sort by <strong>{sort}</strong> rank</h3>
 				{ items.map((item) => (
 					<button
 						key={item}
+						className={(sort === item) ? 'disabled' : ''}
 						disabled={sort === item}
 						value={item}
 						onClick={this.handleOnClick}

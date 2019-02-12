@@ -43,7 +43,7 @@ describe('<RepoItem />', () => {
 
 	it('should has languare and starred count', () => {
 		expect(wrapper.find('span').exists()).toBeTruthy()
-		expect(wrapper.find('span').get(0).props.children[1]).toEqual(repo.language)
-		expect(wrapper.find('span').get(1).props.children[1]).toEqual(repo.stargazers_count)
+		expect(wrapper.find('span').get(0).props.children[1]).toEqual(<strong>{repo.language}</strong>)
+		expect(wrapper.find('span').get(1).props.children[1]).toEqual(<strong>{repo.stargazers_count}</strong>)
 	})
 })
