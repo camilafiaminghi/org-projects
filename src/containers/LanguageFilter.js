@@ -12,9 +12,14 @@ class LanguageFilter extends Component {
 	}
 
 	handleOnChange = (event) => {
-		const { org, sort, handleRepos } = this.props
-		const language = event.target.value
-		handleRepos({ language, org, sort })
+		const { org, handleRepos } = this.props
+
+		handleRepos({
+			org,
+			language: (event.target.value.length > 0) ? event.target.value : null,
+			sort: 'stars',
+			page: 1
+		})
 	}
 
 	render() {
@@ -42,12 +47,11 @@ class LanguageFilter extends Component {
 }
 
 export const mapStateToProps = ({ repos }) => {
-	const { languages, language, sort, org } = repos
+	const { languages, language, org } = repos
 
 	return {
 		languages,
 		language,
-		sort,
 		org
 	}
 }

@@ -12,8 +12,13 @@ class RankControls extends Component {
 
 	handleOnClick = (event) => {
 		const { org, handleRepos } = this.props
-		const sort = event.target.value
-		handleRepos({ sort, org })
+
+		handleRepos({
+			org,
+			language: null,
+			sort: event.target.value,
+			page: 1
+		})
 	}
 
 	render() {

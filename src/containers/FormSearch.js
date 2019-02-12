@@ -39,10 +39,14 @@ export class FormSearch extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault()
 		const { form } = this.state
-		const { sort, page, handleRepos } = this.props
-		const org = form.search
+		const { handleRepos } = this.props
 
-		handleRepos({org, sort, page})
+		handleRepos({
+			org: form.search,
+			language: null,
+			sort: 'stars',
+			page: 1
+		})
 	}
 
 	render() {
@@ -72,19 +76,10 @@ export class FormSearch extends Component {
 	}
 }
 
-export const mapStateToProps = ({ repos }) => {
-	const { page, sort } = repos
-
-	return {
-		page,
-		sort
-	}
-}
-
 export const mapDispatchToProps = (dispatch) => {
   return {
     handleRepos: (search) => dispatch(getRepos(search))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSearch)
+export default connect(null, mapDispatchToProps)(FormSearch)

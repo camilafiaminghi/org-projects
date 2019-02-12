@@ -1,17 +1,17 @@
-import React, { Component, Fragment } from 'react'
-import FormSearch from './FormSearch'
-import Results from './Results'
+import React, { Component } from 'react'
+import FormSearch from './../containers/FormSearch'
+import Results from './../containers/Results'
 
 class HomeView extends Component {
 	render() {
 		return (
-			<Fragment>
+			<div>
 				<header>
 					<h2>Search the repositories of an organization</h2>
 				</header>
 				<FormSearch />
 				<Results />
-			</Fragment>
+			</div>
 		)
 	}
 }
