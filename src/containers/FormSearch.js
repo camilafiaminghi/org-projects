@@ -8,8 +8,7 @@ import { isValid } from '../utils/validation'
 export class FormSearch extends Component {
 
 	static propTypes = {
-		handleRepos: PropTypes.func.isRequired,
-		loading: PropTypes.bool
+		handleRepos: PropTypes.func.isRequired
 	}
 
 	state = {
@@ -42,55 +41,45 @@ export class FormSearch extends Component {
 		const { form } = this.state
 		const { handleRepos } = this.props
 
-		handleRepos(form.search)
+		handleRepos({
+			org: form.search,
+			language: null,
+			sort: 'stars',
+			page: 1
+		})
 	}
 
 	render() {
-		const { loading } = this.props
 		const { validated, submitted, form } = this.state
 
-		if ( loading ) {
-			return (
-				<div>Searching...</div>
-			)
-		}
-
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<InputText
-						name="search"
-						placeholder="Organization name"
-						maxLength={122}
-						charsLeft={true}
-						message="This field is required"
-						handleOnChange={this.handleOnChange}
-						submitted={submitted} />
+			<form
+				onSubmit={this.handleSubmit}
+				className="row">
+				<InputText
+					name="search"
+					placeholder="Organization name"
+					maxLength={122}
+					charsLeft={true}
+					message="This field is required"
+					handleOnChange={this.handleOnChange}
+					submitted={submitted} />
 
-					<button
-						type="submit"
-						disabled={!validated}
-						className={validated ? 'btn' : 'btn disabled'}>
-						Search
-					</button>
-				</form>
-			</div>
+				<button
+					type="submit"
+					disabled={!validated}
+					className={validated ? 'btn' : 'btn disabled'}>
+					Search
+				</button>
+			</form>
 		)
-	}
-}
-
-export const mapStateToProps = ({ repos }) => {
-	const { loading } = repos
-
-	return {
-		loading
 	}
 }
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    handleRepos: (org) => dispatch(getRepos(org))
+    handleRepos: (search) => dispatch(getRepos(search))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSearch);
+export default connect(null, mapDispatchToProps)(FormSearch)

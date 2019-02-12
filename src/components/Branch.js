@@ -7,7 +7,8 @@ const Branch = ({ name, commit }) => {
 			<p>{name}</p>
 			<a
 				href={commit.url}
-				target="_blank">{commit.sha}</a>
+				target="_blank"
+				rel="noopener noreferrer">{commit.sha}</a>
 		</div>
 	)
 }

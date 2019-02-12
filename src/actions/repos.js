@@ -2,10 +2,10 @@ export const REPOS_REQUEST = 'REPOS_REQUEST'
 export const REPOS_SUCCESS = 'REPOS_SUCCESS'
 export const REPOS_FAIL = 'REPOS_FAIL'
 
-export function getRepos (org) {
+export function getRepos (payload) {
 	return {
 		type: REPOS_REQUEST,
-		payload: org
+		payload
 	}
 }
 

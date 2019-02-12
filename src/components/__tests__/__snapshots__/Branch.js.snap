@@ -7,6 +7,7 @@ exports[`<Branch /> matches snapshot 1`] = `
   </p>
   <a
     href="https://api.github.com/repos/facebook/react/commits/f7c56d77dfbb1f7b8217f04e00ff71a26537c9a8"
+    rel="noopener noreferrer"
     target="_blank"
   >
     f7c56d77dfbb1f7b8217f04e00ff71a26537c9a8

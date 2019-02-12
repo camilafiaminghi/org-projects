@@ -11,7 +11,7 @@ const RepoItem = ({ org, name, stargazers_count, description, language }) => {
 				{name}
 			</Link>
 			<p>{description}</p>
-			<span>Language: {language}</span> | <span>Stars: {stargazers_count}</span>
+			<span>Language: <strong>{language}</strong></span> | <span>Stars: <strong>{stargazers_count}</strong></span>
 		</div>
 	)
 }

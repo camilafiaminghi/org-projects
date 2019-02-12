@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #444444;
+  font-size: 14px;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+a {
+  color: #252525;
+}
+
+a:visited,
+a:focus,
+a:visited {
+  text-decoration: none;
+  color: #252525;
+}
+
+ul,
+ol {
+	margin: 0;
+  padding: 0;
+}
+
+li {
+	padding: .8em;
+	border: 1px solid #dad7d7;
+	margin: 0.8em 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+li a,
+li a:hover,
+li a:visited,
+li a:focus {
+	color: #0366d6;
+}
+
+li p {
+	margin: .4em 0;
+}
+
+nav > ul {
+	float: left;
+	margin: 0;
+}
+
+nav > ul > li {
+	display: inline-block;
+}
+
+nav > ul > li > a {
+	text-decoration: none;
+}
+
+input,
+textarea {
+	text-indent: 8px;
+	width: 100%;
+	min-height: 24px;
+}
+
+select {
+	text-indent: 8px;
+	display: block;
+	width: 100%;
+	min-height: 43px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+input,
+textarea,
+select {
+	background-color: #ffffff;
+	border-radius: 4px;
+	border: 1px solid #dad7d7;
+	font-size: 14px;
+	font-weight: 500;
+	color: #666666;
+	margin: .3em 0;
+	padding: .6em 0;
+	text-decoration: none;
+}
+
+input,
+textarea,
+select {
+	margin: .3em 0;
+	padding: .6em 0;
+}
+
+input[type=submit],
+button {
+	font-weight: bold;
+	font-size: 14px;
+	color: #ffffff;
+	background-color: #333333;
+	text-transform: uppercase;
+	margin: .3em 0;
+	padding: .6em 1.2em;
+	cursor: pointer;
+	display: inline-block;
+	min-width: 120px;
+	text-align: center;
+	min-height: 24px;
+}
+
+button.disabled {
+	opacity: .3
+}
+
+section {
+	margin: 0.6em 0;
+}
+
+.results {
+	margin: 1.2em 0;
+}
+
+.results h1,
+.results h2,
+.results h3,
+.results h4,
+.results h5,
+.results h6 {
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+	position: relative;
+	max-width: 720px;
+	margin: 80px auto;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
