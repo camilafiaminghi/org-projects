@@ -40,14 +40,14 @@ export class Results extends Component {
 				)}
 				{( loading ) && (<div>Searching...</div>)}
 				{( items && items.length > 0 ) &&
-					<Fragment>
-						<p>{org}'s repositories:</p>
+					<section className="results">
+						<h3>{org}'s repositories:</h3>
 						<ol>
 							{items.map((item) => (
 								<li key={item.id}><RepoItem {...item} org={org} /></li>
 							))}
 						</ol>
-					</Fragment>
+					</section>
 				}
 			</Fragment>
 		)

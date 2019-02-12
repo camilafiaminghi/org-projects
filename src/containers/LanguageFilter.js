@@ -26,7 +26,7 @@ class LanguageFilter extends Component {
 
 		return (
 			<section>
-				<h3>Filter: </h3>
+				<h3>Filter by language:</h3>
 				<select onChange={this.handleOnChange}>
 					<option value=''>All</option>
 					{languages.map((item) => (

@@ -14,12 +14,16 @@ exports[`<RepoItem /> matches snapshot 1`] = `
   </p>
   <span>
     Language: 
-    JavaScript
+    <strong>
+      JavaScript
+    </strong>
   </span>
    | 
   <span>
     Stars: 
-    122084
+    <strong>
+      122084
+    </strong>
   </span>
 </div>
 `;

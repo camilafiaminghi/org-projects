@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { validationRules } from '../utils/validation'
 
@@ -40,7 +40,7 @@ class InputText extends Component {
 		const textLeft = maxLength - text.length
 
 		return (
-			<div>
+			<Fragment>
 				<input
 					type="text"
 					name={name}
@@ -52,7 +52,7 @@ class InputText extends Component {
 
 				{ (textLeft <= (maxLength - Math.round(maxLength/2)) && charsLeft && changed) && (<span>characteres left [{ textLeft }]</span>) }
 				{ ((!valid && changed) && submitted) && (<span>{message}</span>) }
-			</div>
+			</Fragment>
 		)
 	}
 }

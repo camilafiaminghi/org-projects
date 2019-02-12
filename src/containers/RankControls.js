@@ -26,7 +26,7 @@ class RankControls extends Component {
 
 		return (
 			<section>
-				<h3>Sort by </h3>
+				<h3>Sort by rank</h3>
 				{ items.map((item) => (
 					<button
 						key={item}

@@ -1,28 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormSearch /> matches snapshot 1`] = `
-<div>
-  <form
-    onSubmit={[Function]}
+<form
+  className="row"
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    maxLength={122}
+    name="search"
+    onChange={[Function]}
+    placeholder="Organization name"
+    type="text"
+    value=""
+  />
+  <button
+    className="btn disabled"
+    disabled={true}
+    type="submit"
   >
-    <div>
-      <input
-        autoComplete="off"
-        maxLength={122}
-        name="search"
-        onChange={[Function]}
-        placeholder="Organization name"
-        type="text"
-        value=""
-      />
-    </div>
-    <button
-      className="btn disabled"
-      disabled={true}
-      type="submit"
-    >
-      Search
-    </button>
-  </form>
-</div>
+    Search
+  </button>
+</form>
 `;

@@ -7,7 +7,7 @@ import RouteNotFound from './../components/RouteNotFound'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Switch>
 					<Route exact path="/" component={HomeView} />
 					<Route path="/not-found" component={RouteNotFound} />

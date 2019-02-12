@@ -49,25 +49,25 @@ export class FormSearch extends Component {
 		const { validated, submitted, form } = this.state
 
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<InputText
-						name="search"
-						placeholder="Organization name"
-						maxLength={122}
-						charsLeft={true}
-						message="This field is required"
-						handleOnChange={this.handleOnChange}
-						submitted={submitted} />
+			<form
+				onSubmit={this.handleSubmit}
+				className="row">
+				<InputText
+					name="search"
+					placeholder="Organization name"
+					maxLength={122}
+					charsLeft={true}
+					message="This field is required"
+					handleOnChange={this.handleOnChange}
+					submitted={submitted} />
 
-					<button
-						type="submit"
-						disabled={!validated}
-						className={validated ? 'btn' : 'btn disabled'}>
-						Search
-					</button>
-				</form>
-			</div>
+				<button
+					type="submit"
+					disabled={!validated}
+					className={validated ? 'btn' : 'btn disabled'}>
+					Search
+				</button>
+			</form>
 		)
 	}
 }
