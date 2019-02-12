@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import RepoItem from './../components/RepoItem'
+import RankControls from './RankControls'
 
-export class SearchResult extends Component {
+export class Results extends Component {
 
 	static propTypes = {
 		errors: PropTypes.array,
 		items: PropTypes.array,
 		org: PropTypes.string,
+		loading: PropTypes.bool
 	}
 
 	render() {
-		const { errors, items, org } = this.props
+		const { errors, items, org, loading } = this.props
 
 		/* ERROR MESSAGES */
 		if ( errors ) {
@@ -28,29 +30,32 @@ export class SearchResult extends Component {
 		}
 
 		return (
-			<div>
+			<Fragment>
+				{( items ) && (<RankControls />)}
+				{( loading ) && (<div>Searching...</div>)}
 				{( items ) &&
-					<div>
+					<Fragment>
 						<p>{org}'s repositories:</p>
 						<ol>
 							{items.map((item) => (
 								<li key={item.id}><RepoItem {...item} org={org} /></li>
 							))}
 						</ol>
-					</div>
+					</Fragment>
 				}
-			</div>
+			</Fragment>
 		)
 	}
 }
 
 export const mapStateToProps = ({ repos }) => {
-	const { errors, items, org } = repos
+	const { errors, items, org, loading } = repos
 	return {
 		errors,
 		items,
-		org
+		org,
+		loading
 	}
 }
 
-export default connect(mapStateToProps)(SearchResult);
+export default connect(mapStateToProps)(Results)

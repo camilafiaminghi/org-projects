@@ -19,7 +19,7 @@ exports[`<RepoItem /> matches snapshot 1`] = `
    | 
   <span>
     Stars: 
-    121943
+    122084
   </span>
 </div>
 `;

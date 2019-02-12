@@ -17,9 +17,10 @@ describe('repos action', () => {
 	afterEach(() => store.clearActions())
 
 	it('getRepos should return an object', () => {
-		expect(getRepos('test')).toEqual({
+		const payload = {org:'test'}
+		expect(getRepos(payload)).toEqual({
 			type: REPOS_REQUEST,
-			payload: 'test'
+			payload: payload
 		})
 	})
 

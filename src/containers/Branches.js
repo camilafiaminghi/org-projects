@@ -28,6 +28,7 @@ export class Branches extends Component {
 				<header>
 					<Link to="/">Go to Home</Link>
 				</header>
+				{ ( loading ) && <span>Loading...</span> }
 				{ ( error ) && <span>{ error.message }</span> }
 				{ ( items ) && (
 					<section>
@@ -65,4 +66,4 @@ export const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Branches);
+export default connect(mapStateToProps, mapDispatchToProps)(Branches)

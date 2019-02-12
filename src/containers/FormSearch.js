@@ -8,8 +8,7 @@ import { isValid } from '../utils/validation'
 export class FormSearch extends Component {
 
 	static propTypes = {
-		handleRepos: PropTypes.func.isRequired,
-		loading: PropTypes.bool
+		handleRepos: PropTypes.func.isRequired
 	}
 
 	state = {
@@ -40,20 +39,14 @@ export class FormSearch extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault()
 		const { form } = this.state
-		const { handleRepos } = this.props
+		const { sort, page, handleRepos } = this.props
+		const org = form.search
 
-		handleRepos(form.search)
+		handleRepos({org, sort, page})
 	}
 
 	render() {
-		const { loading } = this.props
 		const { validated, submitted, form } = this.state
-
-		if ( loading ) {
-			return (
-				<div>Searching...</div>
-			)
-		}
 
 		return (
 			<div>
@@ -80,17 +73,18 @@ export class FormSearch extends Component {
 }
 
 export const mapStateToProps = ({ repos }) => {
-	const { loading } = repos
+	const { page, sort } = repos
 
 	return {
-		loading
+		page,
+		sort
 	}
 }
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    handleRepos: (org) => dispatch(getRepos(org))
+    handleRepos: (search) => dispatch(getRepos(search))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(FormSearch)

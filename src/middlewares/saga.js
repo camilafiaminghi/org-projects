@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { getReposByOrg, getBranches } from './../utils/api'
-// import { getReposByOrg, getBranches } from './../__helpers__/api'
+// import { getReposByOrg, getBranches } from './../utils/api'
+import { getReposByOrg, getBranches } from './../__helpers__/api'
 import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../actions/repos'
 import { BRANCHES_REQUEST, BRANCHES_SUCCESS, BRANCHES_FAIL } from './../actions/branches'
 

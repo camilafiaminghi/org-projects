@@ -1,17 +1,17 @@
 import { REPOS_REQUEST, REPOS_SUCCESS, REPOS_FAIL } from './../../actions/repos'
-import repos from './../repos'
+import repos, { initialState } from './../repos'
 import data from './../../__helpers__/repos'
 
 describe('repos reducer', () => {
 	it('should handle initial state', () => {
-		expect(repos(undefined, {})).toEqual({})
+		expect(repos({...initialState}, {})).toEqual({...initialState})
 	})
 
 	it('should handle REPOS_REQUEST', () => {
-		expect(repos({}, {
+		expect(repos({...initialState}, {
 			type: REPOS_REQUEST,
-			payload: 'test'
-		})).toMatchObject({org: 'test', loading: true})
+			payload: {org: 'test'}
+		})).toMatchObject({...initialState, org: 'test', loading: true})
 	})
 
 	it('should handle REPOS_SUCCESS', () => {

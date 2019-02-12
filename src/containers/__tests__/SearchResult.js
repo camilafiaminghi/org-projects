@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
-import { SearchResult } from './../SearchResult'
+import { Results } from './../Results'
 import RepoItem from './../../components/RepoItem'
 import repos from './../../__helpers__/repos'
 import reposError from './../../__helpers__/reposError'
@@ -17,15 +17,15 @@ let props = {
 const mockStore = configureMockStore()
 const store = mockStore({})
 
-describe('<SearchResult />', () => {
+describe('<Results />', () => {
 
 	beforeEach(() => {
-		provider = shallow(<Provider store={store}><SearchResult {...props} /></Provider>)
-		wrapper = provider.find(SearchResult).shallow()
+		provider = shallow(<Provider store={store}><Results {...props} /></Provider>)
+		wrapper = provider.find(Results).shallow()
 	})
 
 	it('matches snapshot', () => {
-		const component = renderer.create(<SearchResult {...props} />)
+		const component = renderer.create(<Results {...props} />)
 		expect(component.toJSON()).toMatchSnapshot()
 	})
 
@@ -39,8 +39,8 @@ describe('<SearchResult />', () => {
 			errors: reposError.response.data.errors
 		}
 
-		provider = shallow(<Provider store={store}><SearchResult {...props} /></Provider>)
-		wrapper = provider.find(SearchResult).shallow()
+		provider = shallow(<Provider store={store}><Results {...props} /></Provider>)
+		wrapper = provider.find(Results).shallow()
 		expect(wrapper.find('ul').exists()).toBeTruthy()
 		expect(wrapper.find('ul').find('li')).toHaveLength(props.errors.length)
 	})
@@ -52,8 +52,8 @@ describe('<SearchResult />', () => {
 			items: repos.items
 		}
 
-		provider = shallow(<Provider store={store}><SearchResult {...props} /></Provider>)
-		wrapper = provider.find(SearchResult).shallow()
+		provider = shallow(<Provider store={store}><Results {...props} /></Provider>)
+		wrapper = provider.find(Results).shallow()
 		expect(wrapper.find(RepoItem)).toHaveLength(props.items.length)
 	})
 })

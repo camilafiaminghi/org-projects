@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FormSearch from './FormSearch'
-import SearchResult from './SearchResult'
+import Results from './Results'
 
 class HomeView extends Component {
 	render() {
@@ -10,10 +10,10 @@ class HomeView extends Component {
 					<h2>Search the repositories of an organization</h2>
 				</header>
 				<FormSearch />
-				<SearchResult />
+				<Results />
 			</div>
 		)
 	}
 }
 
-export default HomeView;
+export default HomeView
