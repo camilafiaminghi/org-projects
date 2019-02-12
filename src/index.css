@@ -111,6 +111,7 @@ select {
 
 input[type=submit],
 button {
+	font-weight: bold;
 	font-size: 14px;
 	color: #ffffff;
 	background-color: #333333;
@@ -124,8 +125,7 @@ button {
 	min-height: 24px;
 }
 
-button.disabled,
-button[disabled=disabled] {
+button.disabled {
 	opacity: .3
 }
 
@@ -159,4 +159,5 @@ section {
 .row {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }

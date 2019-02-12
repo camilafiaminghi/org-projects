@@ -15,9 +15,12 @@ const repos = (state = {...initialState}, action) => {
 				loading: true
 			}
 		case REPOS_SUCCESS:
+			const perPage = 4
+			const nextPage = (action.payload.items % perPage === 0) ? false : true
 			return {
 				...state,
 				...action.payload,
+				nextPage,
 				languages: [...new Set((action.payload.items || []).map(item => item.language))],
 				errors: null,
 				loading: false

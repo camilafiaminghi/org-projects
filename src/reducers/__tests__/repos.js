@@ -15,10 +15,10 @@ describe('repos reducer', () => {
 	})
 
 	it('should handle REPOS_SUCCESS', () => {
-		expect(repos({}, {
+		expect(repos({...initialState}, {
 			type: REPOS_SUCCESS,
 			payload: data
-		})).toMatchObject(data)
+		})).toMatchObject({...initialState, ...data})
 	})
 
 	it('should handle REPOS_FAIL', () => {

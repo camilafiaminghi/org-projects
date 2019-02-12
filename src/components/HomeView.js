@@ -1,6 +1,7 @@
 import React from 'react'
 import FormSearch from './../containers/FormSearch'
 import Results from './../containers/Results'
+import NextPage from './../containers/NextPage'
 
 const HomeView = () => {
 	return (

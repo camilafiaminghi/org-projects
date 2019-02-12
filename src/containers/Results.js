@@ -8,14 +8,15 @@ import LanguageFilter from './LanguageFilter'
 export class Results extends Component {
 
 	static propTypes = {
+		org: PropTypes.string,
+		loading: PropTypes.bool,
 		errors: PropTypes.array,
 		items: PropTypes.array,
-		org: PropTypes.string,
-		loading: PropTypes.bool
+		totalCount: PropTypes.number
 	}
 
 	render() {
-		const { errors, items, org, loading } = this.props
+		const { org, loading, errors, items, totalCount } = this.props
 
 		/* ERROR MESSAGES */
 		if ( errors ) {
@@ -45,7 +46,7 @@ export class Results extends Component {
 				)}
 				{( items && items.length > 0 ) &&
 					<section className="results">
-						<h3>{org}'s repositories:</h3>
+						<h3>{org}'s repositories [show: {items.length}/{totalCount}]:</h3>
 						<ol>
 							{items.map((item) => (
 								<li key={item.id}><RepoItem {...item} org={org} /></li>
@@ -59,12 +60,13 @@ export class Results extends Component {
 }
 
 export const mapStateToProps = ({ repos }) => {
-	const { errors, items, org, loading } = repos
+	const { org, loading, errors, items, total_count } = repos
 	return {
+		org,
+		loading,
 		errors,
 		items,
-		org,
-		loading
+		totalCount: total_count
 	}
 }
 
