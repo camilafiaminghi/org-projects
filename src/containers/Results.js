@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import RepoItem from './../components/RepoItem'
 import RankControls from './RankControls'
+import LanguageFilter from './LanguageFilter'
 
 export class Results extends Component {
 
@@ -31,9 +32,14 @@ export class Results extends Component {
 
 		return (
 			<Fragment>
-				{( items ) && (<RankControls />)}
+				{( items ) && (
+					<Fragment>
+						<RankControls />
+						<LanguageFilter />
+					</Fragment>
+				)}
 				{( loading ) && (<div>Searching...</div>)}
-				{( items ) &&
+				{( items && items.length > 0 ) &&
 					<Fragment>
 						<p>{org}'s repositories:</p>
 						<ol>

@@ -11,6 +11,7 @@ const repos = (state = {...initialState}, action) => {
 			return {
 				...state,
 				...action.payload,
+				items: [],
 				loading: true
 			}
 		case REPOS_SUCCESS:

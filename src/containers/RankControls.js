@@ -21,12 +21,12 @@ class RankControls extends Component {
 		const items = ['stars', 'forks']
 
 		if (!sort) {
-			return (<span>Sort by is not defined</span>)
+			return (<span>Sort by is not enabled</span>)
 		}
 
 		return (
 			<section>
-				<h3>Rank repositories by </h3>
+				<h3>Sort by </h3>
 				{ items.map((item) => (
 					<button
 						key={item}
