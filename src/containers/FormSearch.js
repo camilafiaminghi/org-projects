@@ -44,8 +44,7 @@ export class FormSearch extends Component {
 		handleRepos({
 			org: form.search,
 			language: null,
-			sort: 'stars',
-			page: 1
+			sort: 'stars'
 		})
 	}
 

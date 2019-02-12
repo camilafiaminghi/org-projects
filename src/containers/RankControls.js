@@ -16,8 +16,7 @@ class RankControls extends Component {
 		handleRepos({
 			org,
 			language: null,
-			sort: event.target.value,
-			page: 1
+			sort: event.target.value
 		})
 	}
 

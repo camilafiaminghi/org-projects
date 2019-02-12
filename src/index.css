@@ -14,7 +14,7 @@ code {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-	margin: 0;
+	margin: 0.6em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,6 +78,8 @@ textarea {
 }
 
 select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
 	text-indent: 8px;
 	display: block;
 	width: 100%;
@@ -92,13 +94,24 @@ input,
 textarea,
 select {
 	background-color: #ffffff;
-	border: 1px solid #999999;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid #999999;
 	font-size: 14px;
 	font-weight: 500;
 	color: #666666;
 	margin: .3em 0;
 	padding: .6em 0;
 	text-decoration: none;
+	border-radius: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-bottom: 2px solid #333333;
 }
 
 input,
@@ -110,22 +123,26 @@ select {
 
 input[type=submit],
 button {
+	border: none;
 	font-weight: bold;
 	font-size: 14px;
 	color: #ffffff;
 	background-color: #333333;
 	text-transform: uppercase;
-	margin: .3em 0;
-	padding: .6em 1.2em;
+	padding: .8em 1.6em;
 	cursor: pointer;
 	display: inline-block;
 	min-width: 120px;
-	text-align: center;
 	min-height: 24px;
+	text-align: center;
 }
 
 button.disabled {
 	opacity: .3
+}
+
+form button {
+	margin: .3em;
 }
 
 section {
@@ -152,11 +169,17 @@ section {
 	margin: auto;
 	position: relative;
 	max-width: 720px;
-	margin: 80px auto;
+	margin: 20px auto;
 }
 
 .row {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+		margin: 80px auto;
+	}
 }

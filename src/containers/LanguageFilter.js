@@ -11,19 +11,26 @@ class LanguageFilter extends Component {
 		org: PropTypes.string
 	}
 
+	state = {
+		selected: null
+	}
+
 	handleOnChange = (event) => {
 		const { org, handleRepos } = this.props
+		const language = (event.target.value.length > 0) ? event.target.value : null
 
 		handleRepos({
 			org,
-			language: (event.target.value.length > 0) ? event.target.value : null,
-			sort: 'stars',
-			page: 1
+			language,
+			sort: 'stars'
 		})
+
+		this.setState((state) => ({...state, selected: language}))
 	}
 
 	render() {
 		const { languages } = this.props
+		const selected = (this.state.selected) ? this.state.selected : ''
 
 		if (!languages) {
 			return (<span>Filter by language is not enabled</span>)
@@ -32,7 +39,9 @@ class LanguageFilter extends Component {
 		return (
 			<section>
 				<h3>Filter by language:</h3>
-				<select onChange={this.handleOnChange}>
+				<select
+					value={selected}
+					onChange={this.handleOnChange}>
 					<option value=''>All</option>
 					{languages.map((item,index) => (
 						<option

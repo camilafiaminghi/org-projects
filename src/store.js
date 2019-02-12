@@ -6,10 +6,9 @@ import rootSaga from './middlewares/saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const middlewares = applyMiddleware(
-	logger,
-	sagaMiddleware
-)
+const middlewares = (process.env.NODE_ENV !== 'production')
+	? applyMiddleware( logger, sagaMiddleware )
+	: applyMiddleware( sagaMiddleware )
 
 const store = createStore(
 	reducers(),
